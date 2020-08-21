@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Globals  */
+:root {
+  --softgrey: rgba(32, 33, 36, 0.28);
+  --box: 0 1px 6px 0
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+
+li {
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Header Component */
+header {
+  box-shadow: var(--box) var(--softgrey);
+  padding: 10px 0;
+}
+
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 95%;
+}
+
+.logo {
+  font-size: 18px;
+  color: green;
+}
+
+.ham img {
+  height: 30px;
+  width: 30px;
+}
+
+
+nav {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  margin-top: 55px;
+  margin-right: -350px;
+  background: #fffffe;
+  transition: ease 0.8s;
+  border-left: 1px solid var(--softgrey);
+  z-index: 999999999999999999;
+  /* CSS no go kill me*/
+}
+
+.open-nav {
+  margin-right: 0px;
+  transition: ease 0.8s;
+}
+
+.nav-wrap ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-wrap nav ul li {
+  text-align: center;
+  padding: 20px 0;
+  width: 300px;
+  border-bottom: 1px solid var(--softgrey);
+}
+
+@media only screen and (min-width:700px) {
+  .nav-wrap {
+    width: 90%;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-wrap ul li {
+    margin: 0 7px;
+  }
+}
+
+@media only screen and (min-width:1000px) {
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-wrap ul li {
+    margin: 0 12px;
+    font-size: 1.2rem;
+  }
+}
+
+/* login page "/" */
+
+form {
+  margin: auto;
+  width: 90%;
+  box-shadow: var(--box) var(--softgrey);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+form h2:first-child {
+  text-align: center;
+  color: green;
+  font-size: 1rem;
+}
+
+form div {
+  margin: 10px 0 !important;
+}
+
+@media only screen and (min-width:700px) {
+  form {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width:1000px) {
+  form {
+    width: 60%;
+  }
+
+  form h2:first-child {
+    font-size: 1.3rem;
+  }
+}
+
+/* users page  */
+
+.users-header {
+  display: flex;
+  text-align: center;
+  margin: 15px auto;
+  width: 90%;
+
+}
+
+.users-header Button {
+  margin-left: 20px;
+}
