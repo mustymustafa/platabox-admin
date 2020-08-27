@@ -1,13 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Sen", sans-serif;
+  background: #F7F8FE;
+  background: #F0FFF8;
+}
+
 /* Globals  */
 :root {
   --softgrey: rgba(32, 33, 36, 0.28);
-  --box: 0 1px 6px 0
+  --box: 0 1px 6px 0;
+  --green: #38A169;
+  --text: #303030;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: #303030;
+  font-weight: bold
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold
 }
 
 .indicator {
@@ -141,16 +167,143 @@ form div {
   }
 }
 
-/* users page  */
 
-.users-header {
+
+
+/* Global styles for page structure */
+
+.header {
   display: flex;
   text-align: center;
   margin: 15px auto;
-  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
 
 }
 
-.users-header Button {
-  margin-left: 20px;
+
+.skeleton {
+  margin: auto;
+  width: 90%;
+}
+
+.heading {
+  margin: 10px auto;
+  width: 90%;
+  color: var(--green);
+  font-weight: bold;
+  border-bottom: 1px solid var(--softgrey);
+}
+
+.wrap {
+  margin: auto;
+  width: 90%;
+  background: white;
+}
+
+.title {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  font-weight: bold;
+}
+
+
+.title p {
+  font-size: 0.9rem;
+}
+
+.list {
+  box-shadow: var(--box) var(--softgrey);
+  border-left: 5px solid var(--green);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 2px 0;
+  place-items: center;
+  margin: 5px 0;
+}
+
+.list p {
+  margin-left: 10px;
+  font-size: 0.8rem;
+}
+
+.list img {
+  border-radius: 50%;
+  width: 100px;
+  height: 60px;
+}
+
+
+@media only screen and (min-width: 700px) {
+
+  .title p {
+    font-size: 1rem;
+  }
+
+  .list p {
+    font-size: 1rem;
+  }
+}
+
+
+@media only screen and (min-width: 1400px) {
+  .skeleton {
+    width: 70%;
+  }
+
+  .wrap {
+    width: 70%;
+  }
+
+  .title p {
+    font-size: 1.1rem;
+  }
+
+  .list p {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+/* User's page */
+.user-page .title {
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+}
+
+.user-page .list {
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+.user-page .list p {
+  word-wrap: break-word;
+  width: 70px;
+}
+
+@media only screen and (min-width: 700px) {
+
+  .user-page .list p {
+    word-wrap: break-word;
+    width: 90%;
+  }
+
+  .user-page .list {
+    padding: 10px 0;
+  }
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+  .user-page .list p {
+    width: 100%;
+    text-align: center;
+  }
+
+
 }
