@@ -47,7 +47,7 @@ export default function Users() {
           onChange={(e) => setSearch(e.target.value)}
         />
         <Button variantColor="green" size="sm" fontSize="sm">
-          Find Driver
+          Find User
         </Button>
       </section>
 
