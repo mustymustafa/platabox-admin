@@ -34,55 +34,69 @@ export default function Header() {
 
           <nav className={openHam ? "open-nav" : ""}>
             <ul>
-              <li
-                onClick={() => {
-                  setOpenHam((prev) => !prev);
-                }}
-              >
-                <Link to="/driver-registration">Drivers Registration</Link>
-              </li>
-              <li
-                onClick={() => {
-                  setOpenHam((prev) => !prev);
-                }}
-              >
-                <Link to="/logistics-registration">Logistics Registration</Link>
-              </li>
-              <li
-                onClick={() => {
-                  setOpenHam((prev) => !prev);
-                }}
-              >
-                <Link to="/users">Users</Link>
-              </li>
-              <li
-                onClick={() => {
-                  setOpenHam((prev) => !prev);
-                }}
-              >
-                <Link to="/drivers">Drivers</Link>
-              </li>
-              <li
-                onClick={() => {
-                  setOpenHam((prev) => !prev);
-                }}
-              >
-                <Link to="/logistics">Logistics</Link>
-              </li>
-              <li
-                onClick={() => {
-                  setOpenHam((prev) => !prev);
-                }}
-              >
-                <Link to="/delivery-request">Delivery Requests</Link>
-              </li>
-              <li
-                onClick={() => {
-                  setOpenHam((prev) => !prev);
-                }}
-              >
-                <Link to="/ride-request">Ride Requests</Link>
-              </li>
+              <Link to="/driver-registration">
+                <li
+                  onClick={() => {
+                    setOpenHam((prev) => !prev);
+                  }}
+                >
+                  Drivers Registration
+                </li>
+              </Link>
+              <Link to="/logistics-registration">
+                <li
+                  onClick={() => {
+                    setOpenHam((prev) => !prev);
+                  }}
+                >
+                  Logistics Registration
+                </li>
+              </Link>
+              <Link to="/users">
+                <li
+                  onClick={() => {
+                    setOpenHam((prev) => !prev);
+                  }}
+                >
+                  Users
+                </li>
+              </Link>
+              <Link to="/drivers">
+                <li
+                  onClick={() => {
+                    setOpenHam((prev) => !prev);
+                  }}
+                >
+                  Drivers
+                </li>
+              </Link>
+              <Link to="/logistics">
+                <li
+                  onClick={() => {
+                    setOpenHam((prev) => !prev);
+                  }}
+                >
+                  Logistics
+                </li>
+              </Link>
+              <Link to="/delivery-request">
+                <li
+                  onClick={() => {
+                    setOpenHam((prev) => !prev);
+                  }}
+                >
+                  Delivery Requests
+                </li>
+              </Link>
+              <Link to="/ride-request">
+                <li
+                  onClick={() => {
+                    setOpenHam((prev) => !prev);
+                  }}
+                >
+                  Ride Requests
+                </li>
+              </Link>
               <li
                 onClick={() => {
                   if (isAuth) {
