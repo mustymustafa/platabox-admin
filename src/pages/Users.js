@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { UsersQuery } from "../environment";
-import { Spinner, useToast, Input, Button } from "@chakra-ui/core";
+import { Skeleton, useToast, Input, Button } from "@chakra-ui/core";
 
 export default function Users() {
   const toast = useToast();
@@ -11,26 +11,26 @@ export default function Users() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    async function query() {
-      setLoading(true);
-      setError(false);
-      try {
-        const res = await axios.get(UsersQuery);
-        if (res.data) {
-          setLoading(false);
-          setData(res.data.value);
-        }
-      } catch (err) {
-        setLoading(false);
-        setError(true);
-        console.log(err.message);
-      }
-    }
     query();
   }, []);
 
+  async function query() {
+    setLoading(true);
+    setError(false);
+    try {
+      const res = await axios.get(UsersQuery);
+      if (res.data) {
+        setLoading(false);
+        setData(res.data.value);
+      }
+    } catch (err) {
+      setLoading(false);
+      setError(true);
+      console.log(err.message);
+    }
+  }
   return (
-    <div>
+    <div className="user-page">
       {error &&
         toast({
           title: "An error occurred.",
@@ -39,25 +39,56 @@ export default function Users() {
           duration: 5000,
           isClosable: true,
         })}
-      <div className="indicator" style={{ display: loading ? "flex" : "none" }}>
-        {loading && <Spinner speed="1s" />}
-      </div>
-      <section className="users-header">
+
+      <section className="header">
         <Input
           type="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <Button variantColor="green"> Find User </Button>
+        <Button variantColor="green" size="sm" fontSize="sm">
+          Find Driver
+        </Button>
       </section>
-      <div>
-        {data &&
-          data.map((d) => (
-            <div key={d._id}>
-              <p>Emails: {d.email}</p>
-            </div>
-          ))}
+
+      <div className="wrap">
+        <div className="heading">
+          <p>Users</p>
+        </div>
+        <div className="title">
+          <p>Name</p>
+          <p>Email</p>
+          <p>Phone</p>
+          <p>Confirmation Code</p>
+        </div>
+        <div>
+          {data &&
+            data.map((d) => (
+              <div key={d._id} className="list">
+                <p>{d.name}</p>
+                <p>{d.email}</p>
+                <p>{d.phone}</p>
+                <p>{d.confirmationCode}</p>
+              </div>
+            ))}
+        </div>
       </div>
+      {error && (
+        <section className="indicator">
+          <Button onClick={query} variantColor="green">
+            {" "}
+            Reload
+          </Button>
+        </section>
+      )}
+      <section className="skeleton">
+        <div>{loading && <Skeleton height="40px" my="10px" />}</div>
+        <div>{loading && <Skeleton height="40px" my="10px" />}</div>
+        <div>{loading && <Skeleton height="40px" my="10px" />}</div>
+        <div>{loading && <Skeleton height="40px" my="10px" />}</div>
+        <div>{loading && <Skeleton height="40px" my="10px" />}</div>
+        <div>{loading && <Skeleton height="40px" my="10px" />}</div>
+      </section>
     </div>
   );
 }

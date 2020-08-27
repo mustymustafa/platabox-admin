@@ -96,6 +96,7 @@ export default function Index() {
               />
               <InputRightElement width="4.5rem">
                 <Button
+                  variantColor="green"
                   h="1.75rem"
                   size="sm"
                   style={{ marginTop: "-15px" }}
@@ -112,7 +113,7 @@ export default function Index() {
 
         <Button
           isDisabled={Loading}
-          // variantColor="purple"
+          variantColor="green"
           type="submit"
           isLoading={Loading}
         >
