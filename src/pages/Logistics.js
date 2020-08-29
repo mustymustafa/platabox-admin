@@ -135,10 +135,17 @@ export default function Logistics() {
                           </div>
                           <div>
                             Ratings -{" "}
-                            {Math.round(
-                              d.rating.reduce((a, b) => a + b, 0) /
-                                d.rating.length
-                            )}
+                            {isNaN(
+                              Math.round(
+                                d.rating.reduce((a, b) => a + b, 0) /
+                                  d.rating.length
+                              )
+                            )
+                              ? 0
+                              : Math.round(
+                                  d.rating.reduce((a, b) => a + b, 0) /
+                                    d.rating.length
+                                )}
                           </div>
 
                           <div

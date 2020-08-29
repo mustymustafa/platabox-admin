@@ -45,13 +45,15 @@ export default function Ride() {
     }
   }
 
-  function filter() {
+  function filter(e) {
+    e.preventDefault();
+
     if (search === "") {
       query();
       return;
     }
     const filtered = data.filter(
-      (d) => d.name.toLowerCase() === search.toLowerCase()
+      (d) => d.artisan_name === search.toLowerCase()
     );
     setData(filtered);
   }
