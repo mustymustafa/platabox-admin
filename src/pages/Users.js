@@ -29,6 +29,20 @@ export default function Users() {
       console.log(err.message);
     }
   }
+
+  function filter(e) {
+    e.preventDefault();
+    //refetch all data when search is empty
+    if (search === "") {
+      query();
+      return;
+    }
+    const filtered = data.filter(
+      (d) => d.name.toLowerCase() === search.toLowerCase()
+    );
+    setData(filtered);
+  }
+
   return (
     <div className="user-page">
       {error &&
@@ -41,19 +55,28 @@ export default function Users() {
         })}
 
       <section className="header">
-        <Input
-          type="search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <Button variantColor="green" size="sm" fontSize="sm">
-          Find User
-        </Button>
+        <form>
+          <Input
+            type="search"
+            placeholder="search by name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Button
+            type="submit"
+            variantColor="green"
+            size="sm"
+            fontSize="sm"
+            onClick={filter}
+          >
+            Filter
+          </Button>
+        </form>
       </section>
 
       <div className="wrap">
         <div className="heading">
-          <p>Users</p>
+          <p>USERS</p>
         </div>
         <div className="title">
           <p>Name</p>

@@ -45,6 +45,17 @@ export default function Delivery() {
     }
   }
 
+  function filter() {
+    if (search === "") {
+      query();
+      return;
+    }
+    const filtered = data.filter(
+      (d) => d.name.toLowerCase() === search.toLowerCase()
+    );
+    setData(filtered);
+  }
+
   return (
     <div>
       {error &&
@@ -57,19 +68,22 @@ export default function Delivery() {
         })}
 
       <section className="header">
-        <Input
-          type="search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <Button variantColor="green" size="sm" fontSize="sm">
-          Find Delivery Request
-        </Button>
+        <form>
+          <Input
+            type="search"
+            placeholder="search by name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Button variantColor="green" size="sm" fontSize="sm" onClick={filter}>
+            Filter
+          </Button>
+        </form>
       </section>
 
       <div className="wrap">
         <div className="heading">
-          <p>Delivery Request</p>
+          <p>DELIVERY REQUESTS</p>
         </div>
         <div className="title">
           <p>Artisan Name</p>

@@ -55,7 +55,6 @@ header {
   padding: 10px 0;
 }
 
-
 .nav-wrap {
   display: flex;
   justify-content: space-between;
@@ -172,7 +171,7 @@ form div {
 
 /* Global styles for page structure */
 
-.header {
+.header form {
   display: flex;
   text-align: center;
   margin: 15px auto;
@@ -194,6 +193,11 @@ form div {
   color: var(--green);
   font-weight: bold;
   border-bottom: 1px solid var(--softgrey);
+}
+
+.heading p {
+  padding: 20px 0;
+  color: var(--green);
 }
 
 .wrap {

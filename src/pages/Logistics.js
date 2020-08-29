@@ -45,6 +45,17 @@ export default function Logistics() {
     }
   }
 
+  function filter() {
+    if (search === "") {
+      query();
+      return;
+    }
+    const filtered = data.filter(
+      (d) => d.name.toLowerCase() === search.toLowerCase()
+    );
+    setData(filtered);
+  }
+
   return (
     <div>
       {error &&
@@ -56,19 +67,22 @@ export default function Logistics() {
           isClosable: true,
         })}
       <section className="header">
-        <Input
-          type="search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <Button variantColor="green" size="sm" fontSize="sm">
-          Find Logistics rider
-        </Button>
+        <form>
+          <Input
+            type="search"
+            placeholder="search by name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Button variantColor="green" size="sm" fontSize="sm" onClick={filter}>
+            Filter
+          </Button>
+        </form>
       </section>
 
       <div className="wrap">
         <div className="heading">
-          <p>Logistics</p>
+          <p>LOGISTICS</p>
         </div>
         <div className="title">
           <p>Pic</p>
@@ -134,8 +148,13 @@ export default function Logistics() {
                             }}
                           >
                             <div>ID card - </div>
-                            {"  "}
-                            <img src={`${d.idCard}`} alt="id card" />{" "}
+                            <a
+                              href={`${d.idCard}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Open Image
+                            </a>
                           </div>
                           <div>
                             <br />

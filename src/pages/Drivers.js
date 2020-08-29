@@ -45,6 +45,16 @@ export default function Drivers() {
     }
   }
 
+  function filter() {
+    if (search === "") {
+      query();
+      return;
+    }
+    const filtered = data.filter(
+      (d) => d.name.toLowerCase() === search.toLowerCase()
+    );
+    setData(filtered);
+  }
   return (
     <div>
       {error &&
@@ -56,19 +66,22 @@ export default function Drivers() {
           isClosable: true,
         })}
       <section className="header">
-        <Input
-          type="search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <Button variantColor="green" size="sm" fontSize="sm">
-          Find Driver
-        </Button>
+        <form>
+          <Input
+            type="search"
+            placeholder="search by name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Button variantColor="green" size="sm" fontSize="sm" onClick={filter}>
+            Filter
+          </Button>
+        </form>
       </section>
 
       <div className="wrap">
         <div className="heading">
-          <p>Drivers</p>
+          <p>DRIVERS</p>
         </div>
         <div className="title">
           <p>Pic</p>
@@ -136,8 +149,13 @@ export default function Drivers() {
                             }}
                           >
                             <div>Vehicle Image - </div>
-                            {"  "}
-                            <img src={`${d.vpic}`} alt={`${d.vmodel}`} />{" "}
+                            <a
+                              href={`${d.vpic}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Open Image
+                            </a>
                           </div>
                           <div
                             style={{
@@ -147,7 +165,13 @@ export default function Drivers() {
                           >
                             <div>ID card - </div>
                             {"  "}
-                            <img src={`${d.idCard}`} alt="id card" />{" "}
+                            <a
+                              href={`${d.idCard}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Open Image
+                            </a>
                           </div>
                           <div
                             style={{
@@ -157,7 +181,13 @@ export default function Drivers() {
                           >
                             <div>Insurance - </div>
                             {"  "}
-                            <img src={`${d.insurance}`} alt="insurance" />
+                            <a
+                              href={`${d.insurance}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Open Image
+                            </a>
                           </div>
                         </div>
                       </PopoverBody>
