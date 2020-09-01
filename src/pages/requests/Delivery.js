@@ -54,6 +54,9 @@ export default function Delivery() {
     const filtered = data.filter(
       (d) => d.artisan_name === search.toLowerCase()
     );
+    if (filtered.length === 0) {
+      query();
+    }
     setData(filtered);
   }
 

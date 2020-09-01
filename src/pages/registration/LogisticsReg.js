@@ -53,6 +53,9 @@ export default function LogisticsReg() {
       return;
     }
     const filtered = data.filter((d) => d.name === search.toLowerCase());
+    if (filtered.length === 0) {
+      query();
+    }
     setData(filtered);
   }
 
