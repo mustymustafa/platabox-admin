@@ -53,6 +53,9 @@ export default function Drivers() {
     const filtered = data.filter(
       (d) => d.name.toLowerCase() === search.toLowerCase()
     );
+    if (filtered.length === 0) {
+      query();
+    }
     setData(filtered);
   }
   return (

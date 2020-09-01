@@ -45,7 +45,8 @@ export default function Logistics() {
     }
   }
 
-  function filter() {
+  function filter(e) {
+    e.preventDefault();
     if (search === "") {
       query();
       return;
@@ -53,6 +54,9 @@ export default function Logistics() {
     const filtered = data.filter(
       (d) => d.name.toLowerCase() === search.toLowerCase()
     );
+    if (filtered.length === 0) {
+      query();
+    }
     setData(filtered);
   }
 
