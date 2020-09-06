@@ -10,10 +10,8 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  ButtonGroup,
 } from "@chakra-ui/core";
 import { Deliveries } from "../../environment";
 
@@ -134,17 +132,6 @@ export default function Delivery() {
                           <div>P time - {d.pTime}</div>
                         </div>
                       </PopoverBody>
-                      <PopoverFooter
-                        border="0"
-                        d="flex"
-                        alignItems="center"
-                        justifyContent="space-between"
-                        pb={4}
-                      >
-                        <ButtonGroup size="sm">
-                          <Button variantColor="red">Deactivate</Button>
-                        </ButtonGroup>
-                      </PopoverFooter>
                     </PopoverContent>
                   </Popover>
                 </section>

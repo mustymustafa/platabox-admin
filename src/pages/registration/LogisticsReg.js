@@ -45,6 +45,19 @@ export default function LogisticsReg() {
     }
   }
 
+  async function activate(id) {
+    if (window.confirm(`Are you sure you want to activate this user`)) {
+      try {
+        const res = await axios.post(
+          `https://hawk-server.herokuapp.com/api/v1/${id}/activate`
+        );
+        console.log(res);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+  }
+
   function filter(e) {
     e.preventDefault();
 
@@ -161,7 +174,14 @@ export default function LogisticsReg() {
                         pb={4}
                       >
                         <ButtonGroup size="sm">
-                          <Button variantColor="red">Activate</Button>
+                          <Button
+                            variantColor="red"
+                            onClick={() => {
+                              activate(d._id);
+                            }}
+                          >
+                            Activate
+                          </Button>
                         </ButtonGroup>
                       </PopoverFooter>
                     </PopoverContent>

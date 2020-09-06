@@ -45,7 +45,21 @@ export default function Drivers() {
     }
   }
 
-  function filter() {
+  async function deactivate(id) {
+    if (window.confirm(`Are you sure you want to deactivate this user`)) {
+      try {
+        const res = await axios.post(
+          `https://hawk-server.herokuapp.com/api/v1/${id}/deactivate`
+        );
+        console.log(res);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+  }
+
+  function filter(e) {
+    e.preventDefault();
     if (search === "") {
       query();
       return;
@@ -209,7 +223,14 @@ export default function Drivers() {
                         pb={4}
                       >
                         <ButtonGroup size="sm">
-                          <Button variantColor="red">Deactivate</Button>
+                          <Button
+                            variantColor="red"
+                            onClick={() => {
+                              deactivate(d._id);
+                            }}
+                          >
+                            Deactivate
+                          </Button>
                         </ButtonGroup>
                       </PopoverFooter>
                     </PopoverContent>
