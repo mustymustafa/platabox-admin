@@ -57,7 +57,7 @@ export default function DriverReg() {
       }
     }
   }
-
+  // console.log(data);
   function filter(e) {
     e.preventDefault();
 

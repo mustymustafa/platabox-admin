@@ -30,6 +30,7 @@ export default function Users() {
     }
   }
 
+  // console.log(data);
   function filter(e) {
     e.preventDefault();
     //refetch all data when search is empty

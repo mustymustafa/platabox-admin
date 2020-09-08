@@ -62,7 +62,7 @@ export default function Index() {
     <div>
       <form onSubmit={handleSubmit}>
         <p style={{ color: "red" }}>{message}</p>
-        <h2>LogIn </h2>
+        <h2 style={{ textAlign: "center", fontSize: "1.1rem" }}>LogIn </h2>
 
         <FormControl isRequired>
           <div>

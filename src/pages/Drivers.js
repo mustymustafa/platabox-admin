@@ -58,6 +58,8 @@ export default function Drivers() {
     }
   }
 
+  // console.log(data);
+
   function filter(e) {
     e.preventDefault();
     if (search === "") {
@@ -145,9 +147,28 @@ export default function Drivers() {
                           <div>Email - {d.email}</div>
                           <div>Location - {d.location}</div>
                           <div>Driver Since - {d.createdAt}</div>
+                          <div>Expire At - {d.expireAt}</div>
                           <div>Vehicle Color - {d.vcolor}</div>
                           <div>Vehicle Expiry - {d.vl_expiry}</div>
                           <div>Confirmation Code - {d.confirmationCode}</div>
+                          <div>Active - {d.active}</div>
+                          <div>arrived - {d.arrived}</div>
+                          <div>city - {d.city}</div>
+                          <div>city1 - {d.city1}</div>
+                          <div>city2 - {d.city2}</div>
+                          <div>
+                            Earnings -{" "}
+                            {d.earnings.map((e) => (
+                              <p>{e}</p>
+                            ))}
+                          </div>
+                          <div>city2 - {d.isConfirmed}</div>
+                          <div>lat - {d.lat}</div>
+                          <div>long - {d.long}</div>
+                          <div>push token - {d.pushToken}</div>
+                          <div>long - {d.lomg}</div>
+                          <div>start - {d.start}</div>
+
                           <div>
                             Area1 - {d.area1} | Area2 - {d.area2}
                           </div>

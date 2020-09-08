@@ -43,6 +43,8 @@ export default function Ride() {
     }
   }
 
+  // console.log(data);
+
   function filter(e) {
     e.preventDefault();
 
@@ -131,6 +133,25 @@ export default function Ride() {
                           <div>Status - {d.status}</div>
                           <div>Created At - {d.createdAt}</div>
                           <div>P time - {d.pTime}</div>
+                          <div>Active - {d.active}</div>
+                          <div>City - {d.city}</div>
+                          <div>Dest. Lat - {d.destLat}</div>
+                          <div>Dest. Lat2 - {d.destLat2}</div>
+                          <div>Dest. Lat3 - {d.destLat3}</div>
+                          <div>Dest. Lat4 - {d.destLat4}</div>
+                          <div>Dest. Lat5 - {d.destLat5}</div>
+                          <div>Dest. Long - {d.destLong}</div>
+                          <div>Dest. Long2 - {d.destLong2}</div>
+                          <div>Dest. Long3 - {d.destLong3}</div>
+                          <div>Dest. Long4 - {d.destLong4}</div>
+                          <div>Dest. Long5 - {d.destLong5}</div>
+                          <div>Lat - {d.lat}</div>
+                          <div>Long - {d.long}</div>
+                          <div>Now - {d.now}</div>
+                          <div>to2 - {d.to2}</div>
+                          <div>to3 - {d.to3}</div>
+                          <div>to4 - {d.to4}</div>
+                          <div>to5 - {d.to5}</div>
                         </div>
                       </PopoverBody>
                     </PopoverContent>
