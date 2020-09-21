@@ -276,12 +276,12 @@ form div {
 
 /* User's page */
 .user-page .title {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   place-items: center;
 }
 
 .user-page .list {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 
 }
 

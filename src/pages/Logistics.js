@@ -45,6 +45,7 @@ export default function Logistics() {
     }
   }
 
+  // Deactivate and Activate Logistics User
   async function deactivate(id) {
     if (window.confirm(`Are you sure you want to deactivate this user`)) {
       try {
@@ -57,7 +58,18 @@ export default function Logistics() {
       }
     }
   }
-  // console.log(data);
+  async function activate(id) {
+    if (window.confirm(`Are you sure you want to Activate this user`)) {
+      try {
+        const res = await axios.post(
+          `https://hawk-server.herokuapp.com/api/v1/${id}/activate`
+        );
+        console.log(res);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+  }
   function filter(e) {
     e.preventDefault();
     if (search === "") {
@@ -154,10 +166,10 @@ export default function Logistics() {
                           <div>city1 - {d.city1}</div>
                           <div>city2 - {d.city2}</div>
                           <div>
-                            Earnings -{" "}
-                            {d.earnings.map((e) => (
+                            Earnings -{d.earnings}
+                            {/* {d.earnings.map((e) => (
                               <p>{e}</p>
-                            ))}
+                            ))} */}
                           </div>
                           <div>city2 - {d.isConfirmed}</div>
                           <div>lat - {d.lat}</div>
@@ -217,6 +229,16 @@ export default function Logistics() {
                         justifyContent="space-between"
                         pb={4}
                       >
+                        <ButtonGroup size="sm">
+                          <Button
+                            variantColor="green"
+                            onClick={() => {
+                              activate(d._id);
+                            }}
+                          >
+                            Activate
+                          </Button>
+                        </ButtonGroup>
                         <ButtonGroup size="sm">
                           <Button
                             variantColor="red"

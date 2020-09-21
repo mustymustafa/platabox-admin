@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { UsersQuery } from "../environment";
-import { Skeleton, useToast, Input, Button } from "@chakra-ui/core";
+import {
+  Skeleton,
+  useToast,
+  Input,
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+} from "@chakra-ui/core";
 
 export default function Users() {
   const toast = useToast();
@@ -9,6 +21,7 @@ export default function Users() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const initialFocusRef = React.useRef();
 
   useEffect(() => {
     query();
@@ -30,7 +43,6 @@ export default function Users() {
     }
   }
 
-  // console.log(data);
   function filter(e) {
     e.preventDefault();
     //refetch all data when search is empty
@@ -96,6 +108,40 @@ export default function Users() {
                 <p>{d.email}</p>
                 <p>{d.phone}</p>
                 <p>{d.confirmationCode}</p>
+                <section className="modal">
+                  <Popover
+                    initialFocusRef={initialFocusRef}
+                    placement="bottom"
+                    closeOnBlur={false}
+                  >
+                    <PopoverTrigger>
+                      <Button variantColor="green" size="sm">
+                        More
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent
+                      zIndex={4}
+                      color="white"
+                      bg="blue.800"
+                      borderColor="blue.800"
+                    >
+                      <PopoverHeader pt={4} fontWeight="bold" border="0">
+                        {d.name}
+                      </PopoverHeader>
+                      <PopoverArrow />
+                      <PopoverCloseButton />
+                      <PopoverBody>
+                        <div className="pop-over-body">
+                          <div>
+                            Promo - {d.promo === true ? "True" : "False"}
+                          </div>
+                          <div>Promo Date - {d.promo_date}</div>
+                          <div>Next Promo - {d.next_promo}</div>
+                        </div>
+                      </PopoverBody>
+                    </PopoverContent>
+                  </Popover>
+                </section>
               </div>
             ))}
         </div>

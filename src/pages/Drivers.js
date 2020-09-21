@@ -45,6 +45,8 @@ export default function Drivers() {
     }
   }
 
+  //Activate and deactivate user
+
   async function deactivate(id) {
     if (window.confirm(`Are you sure you want to deactivate this user`)) {
       try {
@@ -57,7 +59,18 @@ export default function Drivers() {
       }
     }
   }
-
+  async function activate(id) {
+    if (window.confirm(`Are you sure you want to Activate this user`)) {
+      try {
+        const res = await axios.post(
+          `https://hawk-server.herokuapp.com/api/v1/${id}/activate`
+        );
+        console.log(res);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+  }
   // console.log(data);
 
   function filter(e) {
@@ -243,6 +256,16 @@ export default function Drivers() {
                         justifyContent="space-between"
                         pb={4}
                       >
+                        <ButtonGroup size="sm">
+                          <Button
+                            variantColor="green"
+                            onClick={() => {
+                              activate(d._id);
+                            }}
+                          >
+                            Activate
+                          </Button>
+                        </ButtonGroup>
                         <ButtonGroup size="sm">
                           <Button
                             variantColor="red"
