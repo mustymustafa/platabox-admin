@@ -19,10 +19,13 @@ export class HttpRequestHandler {
       }),
       map(
         (response): ApiResponse<ResponseType> => {
+          const ok = response.status < 400
+          const defaultMessage = ok ? 'Request successful' : 'Request failed'
+
           return {
-            ok: response.status < 400,
-            data: response.response.data,
-            message: response.response.message,
+            ok,
+            data: response.response.data ?? response.response,
+            message: response.response?.message ?? defaultMessage,
             status: response.status,
           }
         },

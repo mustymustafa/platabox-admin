@@ -1,6 +1,6 @@
 import { action, computed, observable } from 'mobx'
-import { UsersServices } from '../services'
 import { User } from '../models'
+import { UsersService } from '../services'
 
 class Store {
   @observable
@@ -13,7 +13,7 @@ class Store {
 
   @action
   public listUsers() {
-    return UsersServices.listUsers().subscribe({
+    return UsersService.listUsers().subscribe({
       next: ({ data: users }) => {
         this._users = users
       },

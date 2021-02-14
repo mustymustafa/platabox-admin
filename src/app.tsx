@@ -1,16 +1,14 @@
+import { observer } from 'mobx-react'
 import React from 'react'
-import { usersStore } from './stores'
+import { Router, Stylesheet } from './components'
 
-export const App: React.FC = () => {
-  React.useEffect(() => {
-    usersStore.listUsers()
-  }, [])
-
+export const App: React.FC = observer(() => {
   return (
-    <div className="App">
-      <span>Placeholder</span>
-    </div>
+    <>
+      <Stylesheet />
+      <Router />
+    </>
   )
-}
+})
 
 export default App

@@ -1,3 +1,5 @@
 export * from './api'
 export * from './history'
+export * from './misc'
 export * from './storage'
+export * from './validation'
