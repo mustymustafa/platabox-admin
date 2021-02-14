@@ -1,15 +1,17 @@
 import React from 'react'
-import { Route, Router as ROUTER, Switch } from 'react-router-dom'
+import { Router as ROUTER, Switch } from 'react-router-dom'
 import { routes } from '../../pages'
 import { appHistory } from '../../util'
+import { Route } from './route'
 
-const appRoutes = routes.map(([path, requiresAuth, component, exact]) => {
+const appRoutes = routes.map(([path, requiresAuth, component, exact], i) => {
   return (
     <Route
-      key={component.name}
-      path={path}
-      component={component}
-      exact={exact}
+      key={i}
+      path={path as string}
+      requiresAuth={requiresAuth as boolean}
+      component={component as React.FC}
+      exact={exact as boolean}
     />
   )
 })

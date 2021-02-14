@@ -29,6 +29,7 @@ export const DarkButton = styled<Button>(motion.button).attrs(
   padding: 0 2rem;
   display: flex;
   align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.035);
 
   :disabled {
     background: #f5f5f5 !important;

@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   max-width: 800px;
   width: 100%;
   background: red;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(1rem);
 
   .form {
@@ -49,10 +49,19 @@ const Wrapper = styled.div`
   }
 `
 
-export const AuthFormWrapper: React.FC = ({ children }) => {
+interface Props {
+  handleSubmit: () => any
+}
+
+export const AuthFormWrapper: React.FC<Props> = ({
+  handleSubmit,
+  children,
+}) => {
   return (
     <Wrapper className="d-flex align-items-center justify-content-center">
-      <form className="form">{children}</form>
+      <form onSubmit={handleSubmit} className="form">
+        {children}
+      </form>
     </Wrapper>
   )
 }
