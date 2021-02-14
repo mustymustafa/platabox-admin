@@ -1,4 +1,5 @@
 import React from 'react'
+import { Router, Stylesheet } from './components'
 import { usersStore } from './stores'
 
 export const App: React.FC = () => {
@@ -7,9 +8,10 @@ export const App: React.FC = () => {
   }, [])
 
   return (
-    <div className="App">
-      <span>Placeholder</span>
-    </div>
+    <>
+      <Stylesheet />
+      <Router />
+    </>
   )
 }
 
