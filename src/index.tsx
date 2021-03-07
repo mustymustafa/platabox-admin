@@ -1,10 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
 
+import { configure } from 'mobx'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './app'
 import reportWebVitals from './report-web-vitals'
+
+configure({
+  enforceActions: 'never',
+})
 
 ReactDOM.render(
   <React.StrictMode>

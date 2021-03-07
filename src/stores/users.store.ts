@@ -4,20 +4,31 @@ import { UsersService } from '../services'
 
 class Store {
   @observable
-  private _users: User[] = []
+  private __users = observable.array<User>([], { deep: false })
 
   @computed
   public get users() {
-    return this._users
+    return this.__users.toJSON()
+  }
+
+  @action
+  private __listUsers() {
+    return UsersService.listUsers().subscribe({
+      next: ({ data: users }) => {
+        this.__users.replace((users as any).value)
+      },
+    })
   }
 
   @action
   public listUsers() {
-    return UsersService.listUsers().subscribe({
-      next: ({ data: users }) => {
-        this._users = users
-      },
-    })
+    if (this.users.length) return
+    this.__listUsers()
+  }
+
+  @action
+  public refreshUsers() {
+    this.__listUsers()
   }
 }
 

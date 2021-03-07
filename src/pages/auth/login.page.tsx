@@ -14,7 +14,7 @@ export const LoginPage: React.FC = () => {
     <div
       className="d-flex align-items-center justify-content-center h-100"
       style={{
-        background: 'url(/images/rodion-kutsaev-pVoEPpLw818-unsplash.jpg)',
+        background: 'url(/images/background.jpg)',
         backgroundSize: 'cover',
       }}
     >
