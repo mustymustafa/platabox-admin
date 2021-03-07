@@ -1,11 +1,12 @@
 import React from 'react'
+import { Page } from '../../components/layout/page'
 import { authStore } from '../../stores'
 
 export const UsersPage: React.FC = () => {
   return (
-    <div>
+    <Page title="Users">
       Users Page <button onClick={() => authStore.logOut()}>Log out</button>
-    </div>
+    </Page>
   )
 }
 
