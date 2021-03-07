@@ -9,7 +9,6 @@ const Wrapper = styled.aside`
   display: flex;
   flex-direction: column;
   background: #fafafa;
-  min-height: 100vh;
   width: 15rem;
   padding: 2rem;
 

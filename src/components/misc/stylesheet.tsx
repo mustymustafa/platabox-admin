@@ -23,6 +23,12 @@ window.addEventListener('resize', setDimensions)
 document.addEventListener('DOMContentLoaded', setDimensions)
 
 export const Stylesheet = createGlobalStyle`
+  #root {
+    height: 100vh !important;
+    padding: 2rem;
+    background: #223e39;
+  }
+  
   :root {
     --vh: ${vh};
     --vw: ${vw};
@@ -30,6 +36,12 @@ export const Stylesheet = createGlobalStyle`
     --card-width: 45px;
     --color: #333333;
     --primary-color: #2a86cf;
+  }
+
+  .small-text {
+    font-size: 80%;
+    color: #555;
+    font-weight: lighter;
   }
 
   * {

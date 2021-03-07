@@ -1,4 +1,10 @@
 export interface User {
   name: string
-  age: number
+  phone: string
+  email: string
+  confirmationCode: string
+  balance: number
+  country: '+234'
+  isConfirmed: boolean
+  promo: boolean
 }

@@ -5,8 +5,8 @@ import { Sidebar } from './sidebar'
 const Wrapper = styled.div`
   display: flex;
   background: white;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   .page__body__header {
     font-size: 70%;
@@ -16,8 +16,16 @@ const Wrapper = styled.div`
   }
 
   .page__body {
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
     flex: 1;
+  }
+
+  .page__body__main {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 `
 
