@@ -4,7 +4,7 @@ export interface User {
   email: string
   confirmationCode: string
   balance: number
-  country: '+234'
+  country: string
   isConfirmed: boolean
   promo: boolean
 }

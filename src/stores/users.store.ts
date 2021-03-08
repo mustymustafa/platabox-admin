@@ -14,8 +14,8 @@ class Store {
   @action
   private __listUsers() {
     return UsersService.listUsers().subscribe({
-      next: ({ data: users }) => {
-        this.__users.replace((users as any).value)
+      next: ({ data: { value: users } }) => {
+        this.__users.replace(users)
       },
     })
   }
