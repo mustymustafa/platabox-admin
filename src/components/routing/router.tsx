@@ -8,10 +8,10 @@ const appRoutes = routes.map(([path, requiresAuth, component, exact], i) => {
   return (
     <Route
       key={i}
-      path={path as string}
-      requiresAuth={requiresAuth as boolean}
-      component={component as React.FC}
-      exact={exact as boolean}
+      path={path}
+      requiresAuth={requiresAuth}
+      component={component}
+      exact={exact}
     />
   )
 })
