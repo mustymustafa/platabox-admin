@@ -112,14 +112,15 @@ const ButtonArea = styled.div`
     display: flex;
 
     button:disabled {
-      background: #eee;
-      color: black;
+      background: #dddddd;
+      color: #666;
     }
 
     button {
-      background: #222;
-      border: none;
-      color: white;
+      background: white;
+      border: 1px solid #dddddd;
+      border-radius: 0.25rem;
+      color: #393939;
       padding: 0 0.5rem;
       height: 1.5rem;
       font-size: 70%;
@@ -212,9 +213,8 @@ export const BasicTable = observer(
         </StyledTable>
         <ButtonArea className="mt-3">
           <span className="small-text">
-            Showing {pageIndex * PAGE_SIZE + 1} to{' '}
-            {pageIndex * PAGE_SIZE + page.length} of {rows.length}{' '}
-            {rows.length !== 1 ? 'entries' : 'entry'}
+            {pageIndex * PAGE_SIZE + 1} - {pageIndex * PAGE_SIZE + page.length}{' '}
+            / {rows.length}
           </span>
           <section>
             <button onClick={() => previousPage()} disabled={!canPreviousPage}>
