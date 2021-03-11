@@ -1,5 +1,6 @@
 import { Formik } from 'formik'
 import React from 'react'
+import { FiArrowRight } from 'react-icons/fi'
 import { TextInput } from '../../components'
 import { DarkButton } from '../../components/buttons'
 import { LogInModel } from '../../models/request/auth'
@@ -22,7 +23,7 @@ export const LoginPage: React.FC = () => {
         validate={validateModel}
         enableReinitialize
         initialValues={new LogInModel()}
-        onSubmit={(login, { setSubmitting, setErrors }) => {
+        onSubmit={(login, { setSubmitting }) => {
           setSubmitting(true)
           setError('')
 
@@ -69,7 +70,8 @@ export const LoginPage: React.FC = () => {
                 isLoading={isSubmitting}
                 disabled={!isValid}
               >
-                <span>Enter &gt;</span>
+                <span className="mr-2">Enter</span>
+                <FiArrowRight />
               </DarkButton>
             </footer>
           </AuthFormWrapper>

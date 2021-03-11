@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { LoginPage } from './auth'
 import { DeliveriesPage } from './deliveries'
 import { LogisticsPage } from './logistics'
+import { NotificationsPage } from './notifications'
 import { UsersPage } from './users'
 
 export type RouterRoute = [
@@ -17,5 +18,6 @@ export const routes: RouterRoute[] = [
   ['/delivery-requests', true, DeliveriesPage],
   ['/log-in', false, LoginPage],
   ['/logistics', true, LogisticsPage],
+  ['/notifications', true, NotificationsPage],
   ['/users', true, UsersPage],
 ]

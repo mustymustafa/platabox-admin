@@ -36,11 +36,13 @@ export const generateMotionButtonAttributes = ({
 
   const motionAttributes: MotionProps = {
     whileHover: {
-      scale: 1.125,
+      scale: 1,
+      y: -4,
       ...whileHover,
     },
     whileTap: {
       scale: 0.9,
+      y: 2,
       ...whileTap,
     },
   }

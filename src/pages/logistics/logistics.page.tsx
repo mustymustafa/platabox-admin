@@ -13,7 +13,7 @@ const LogoContainer = styled.div<{ img: string }>`
   word-wrap: break-word;
   font-size: 65%;
   color: white;
-  background: linear-gradient(#267bff, #2c81af);
+  background: linear-gradient(#267bff, #5675ea);
   padding: 0.5rem;
 
   ::before {

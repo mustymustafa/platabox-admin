@@ -11,7 +11,6 @@ export async function validateModel<T extends BaseModel = any>(
   }
 
   values?.transform?.()
-  values?.finalize?.()
 
   const validationErrors = await validate(values, {
     whitelist: true,

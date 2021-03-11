@@ -40,16 +40,17 @@ const Wrapper = styled.aside`
 `
 
 type Route = [
-  string /* Title */,
-  string /* Path */,
-  boolean /* Exact? */,
-  boolean? /* Inactive */,
+  string /* title */,
+  string /* path */,
+  boolean /* exact? */,
+  boolean? /* inactive? */,
 ]
 
 const routes: Route[] = [
   ['Users', '/users', true],
   ['Drivers', '/drivers', true, true],
   ['Logistics', '/logistics', true],
+  ['Notifications', '/notifications', true],
   ['Delivery Requests', '/delivery-requests', true],
   ['Ride Requests', '/ride-requests', true, true],
   ["Drivers' Registration", '/drivers-registration', true, true],
@@ -78,7 +79,9 @@ export const Sidebar: React.FC = observer(() => {
         </nav>
       </main>
       <footer>
-        <DarkButton onClick={() => authStore.logOut()}>Log out</DarkButton>
+        <DarkButton onClick={() => authStore.logOut()}>
+          <span>Log out</span>
+        </DarkButton>
       </footer>
     </Wrapper>
   )

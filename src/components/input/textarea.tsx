@@ -1,5 +1,4 @@
 import { useField } from 'formik'
-import { HTMLMotionProps } from 'framer-motion'
 import React from 'react'
 import { getClassNames } from '../../util'
 import { BaseInput, generateInputLabel, InputWrapper } from './common'
@@ -10,18 +9,14 @@ interface Props {
   className?: string
   required?: boolean
   placeholder: string
-  type: HTMLMotionProps<'input'>['type']
-  extras?: HTMLMotionProps<'input'>
 }
 
-export const TextInput: React.FC<Props> = ({
+export const Textarea: React.FC<Props> = ({
   name,
   label,
   className,
   required,
   placeholder,
-  type,
-  extras,
 }) => {
   const [field, meta] = useField({ name })
   const invalid = React.useMemo(() => !!meta.error && meta.touched, [meta])
@@ -36,7 +31,7 @@ export const TextInput: React.FC<Props> = ({
       )}
     >
       {generateInputLabel({ valid, invalid, label, required })}
-      <BaseInput placeholder={placeholder} type={type} {...field} {...extras} />
+      <BaseInput as="textarea" placeholder={placeholder} {...field} />
       {invalid && <span className="error-message">{meta.error}</span>}
     </InputWrapper>
   )
