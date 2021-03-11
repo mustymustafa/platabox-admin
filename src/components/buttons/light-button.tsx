@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { generateMotionButtonAttributes } from './common'
 import { DarkButton } from './dark-button'
 
-export const PrimaryButton = styled(DarkButton).attrs(
+export const LightButton = styled(DarkButton).attrs(
   ({ children, isLoading, disabled, ...props }) =>
     generateMotionButtonAttributes({
       children,
@@ -11,7 +11,7 @@ export const PrimaryButton = styled(DarkButton).attrs(
       props,
     }),
 )`
-  background: var(--primary-color);
-  border-color: #2e82c5;
-  color: var(--light-foreground);
+  background: var(--light-foreground);
+  border-color: var(--border-color);
+  color: var(--color);
 `

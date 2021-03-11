@@ -1,11 +1,11 @@
 import { IsEmail, MinLength } from 'class-validator'
-import { ValidationMessages } from '../../../util'
+import { ValidationMessage } from '../../../util/validation'
 import { BaseModel } from '../base.model'
 
 export class LogInModel extends BaseModel {
-  @IsEmail(undefined, { message: ValidationMessages.RequiredField })
+  @IsEmail(undefined, { message: ValidationMessage.RequiredField })
   public email: string = ''
 
-  @MinLength(8, { message: ValidationMessages.TooShort })
+  @MinLength(8, { message: ValidationMessage.TooShort })
   public password: string = ''
 }

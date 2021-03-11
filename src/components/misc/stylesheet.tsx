@@ -25,17 +25,20 @@ document.addEventListener('DOMContentLoaded', setDimensions)
 export const Stylesheet = createGlobalStyle`
   #root {
     height: 100vh !important;
-    padding: 2rem;
+    padding: 1rem;
     background: #223e39;
+    overflow: hidden;
   }
   
   :root {
     --vh: ${vh};
     --vw: ${vw};
-    --card-height: 60px;
-    --card-width: 45px;
     --color: #333333;
-    --primary-color: #2a86cf;
+    --primary-color: #007bff;
+    --border-color: #d5d9de;
+    --dark-background: #000;
+    --light-foreground: #fff;
+    --drop-shadow-light: 0 2px 2px 0 rgba(0, 0, 0, 0.035);
   }
 
   .small-text {
@@ -47,7 +50,6 @@ export const Stylesheet = createGlobalStyle`
   * {
     box-sizing: border-box;
     outline: none !important;
-    /* user-select: none; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

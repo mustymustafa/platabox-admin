@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
   .page__body__main {
     flex: 1;
-    overflow-x: hidden;
+    overflow-x: visible;
     overflow-y: auto;
   }
 `

@@ -13,20 +13,16 @@ export const DarkButton = styled<Button>(motion.button).attrs(
       children,
       disabled,
       isLoading,
-      whileHover: {
-        color: '#000000',
-        backgroundColor: '#fde500',
-      },
       props,
     }),
 )`
-  background: #000000;
+  background: var(--dark-background);
   height: 3rem;
-  border-radius: 0.125rem;
-  color: white;
+  border: 1px solid var(--dark-background);
+  border-radius: 0.25rem;
+  color: var(--light-foreground);
   font-weight: bold;
-  border: none;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.035);
