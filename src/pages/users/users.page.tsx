@@ -25,8 +25,8 @@ export const UsersPage: React.FC = observer(() => {
             accessor: 'phone',
           },
           {
-            Header: 'Code',
-            accessor: 'confirmationCode',
+            Header: 'Balance',
+            accessor: 'balance',
           },
         ]}
         data={usersStore.users}
