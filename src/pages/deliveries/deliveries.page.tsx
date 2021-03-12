@@ -25,8 +25,8 @@ export const DeliveriesPage: React.FC = observer(() => {
             accessor: 'to',
           },
           {
-            Header: 'Time',
-            accessor: 'time',
+            Header: 'Requested By',
+            accessor: 'user',
           },
         ]}
         data={deliveriesStore.deliveries}
