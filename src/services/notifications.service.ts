@@ -5,6 +5,7 @@ export class NotificationsService {
   public static createNotification(model: CreateNotificationModel) {
     return HttpClient.post<CreateNotificationModel>(
       `${model.type}/notification`,
+      model,
     )
   }
 }
