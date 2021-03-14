@@ -1,3 +1,5 @@
+import { DeliveryStatus } from '../../util/constants'
+
 export interface Delivery {
   active: boolean
   artisan: string
@@ -19,6 +21,8 @@ export interface Delivery {
   destLong5: number | null
   distance: string
   from: string
+  hirer: string
+  hirer_phone: string
   lat: number
   long: number
   n1: string
@@ -31,7 +35,7 @@ export interface Delivery {
   payment: string
   price: string
   rated: boolean
-  status: string
+  status: DeliveryStatus
   time: string
   to: string
   to2: string
