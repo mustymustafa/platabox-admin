@@ -52,7 +52,7 @@ export class ApiUtil {
     if (this.bearer_token) headers.authorization = this.bearer_token
 
     if (body && body instanceof BaseModel) {
-      body = (body as BaseModel).finalize?.()
+      body = (body as BaseModel).finalize?.() ?? body
     }
 
     return { method, url: this.getUrl(endpoint), body, headers }
