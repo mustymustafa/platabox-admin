@@ -18,6 +18,9 @@ class Store {
 
   @action
   public logIn(login: LogInModel, actions?: Actions) {
+    //This is to bypass the authentication for the purpose of this demo as it is not connected to the server at the moment.
+    return appHistory.push('/notifications');
+
     return AuthService.logIn(login).subscribe({
       next: (response) => {
         const {

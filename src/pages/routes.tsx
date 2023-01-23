@@ -14,10 +14,11 @@ export type RouterRoute = [
 ]
 
 export const routes: RouterRoute[] = [
+  //remove auth for demo purpose
   ['/', true, () => <Redirect to={{ pathname: '/users' }} />, true],
-  ['/delivery-requests', true, DeliveriesPage],
+  ['/delivery-requests', false, DeliveriesPage],
   ['/log-in', false, LoginPage],
-  ['/logistics', true, LogisticsPage],
-  ['/notifications', true, NotificationsPage],
-  ['/users', true, UsersPage],
+  ['/logistics', false, LogisticsPage],
+  ['/notifications', false, NotificationsPage],
+  ['/users', false, UsersPage],
 ]
