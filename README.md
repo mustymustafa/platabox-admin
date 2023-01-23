@@ -1,7 +1,7 @@
-# Platabox Main
+# Platabox admin
 
 ## Running the project
 
 ```sh
-npm run start
+yarn start
 ```
